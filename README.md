@@ -13,7 +13,7 @@ The objective of this project is to learn and implement the fundamental concepts
 
 ## Technologies Used
 - Java
-- (Planned) Jsoup (for web scraping)
+- Jsoup (for web scraping)
 - (Planned) Apache Lucene (for advanced indexing and search functionalities)
 
 ## Usage
