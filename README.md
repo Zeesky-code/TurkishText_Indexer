@@ -1,14 +1,15 @@
 # TurkishText_Indexer
 
-This project is created for educational purposes as part of my Information Retrieval course. The primary goal is to implement an indexing engine in Java and utilize it to process a Turkish poem, BAYRAMOGLU by NAZIM HIKMET.
+This project is created for educational purposes as part of my Information Retrieval course. The primary goal is to implement an indexing engine in Java and utilize it to process a Turkish poems by NAZIM HIKMET.
 
 ## Objective
 The objective of this project is to learn and implement the fundamental concepts of information retrieval, including text preprocessing, indexing, and potentially search functionalities. The project aims to create an indexing engine capable of handling a Turkish text dataset, with the intention to grow and incorporate additional features as the course progresses.
 
 ## Features
-- (Planned) Web scraping to retrieve a Turkish poem from a specific URL.
+- Web scraping to retrieve a Turkish poem from a specific URL.
 - (Planned) Text preprocessing techniques such as tokenization, lowercasing.
 - (Planned) Implementation of a basic indexing engine.
+- (Planned) Calculation of cosine similarity of different poems
 - (Planned) Search functionalities to retrieve information based on user queries.
 
 ## Technologies Used
@@ -16,6 +17,9 @@ The objective of this project is to learn and implement the fundamental concepts
 - Jsoup (for web scraping)
 - (Planned) Apache Lucene (for advanced indexing and search functionalities)
 
+## Analysed Poems
+-  [CANKIRI HAPISANESINDEN MEKTUPLAR by Nazim Himet](https://www.cs.rpi.edu/~sibel/poetry/poems/nazim_hikmet/cankiri_hapishanesinden_mektuplar)
+- [Hos geldin by Nazim Himet](https://www.cs.rpi.edu/~sibel/poetry/poems/nazim_hikmet/hos_geldin)
 ## Usage
 This project serves as an educational resource to understand and apply information retrieval concepts. To use or contribute to this project, clone the repository and follow the setup instructions.
 
