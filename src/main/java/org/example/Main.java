@@ -1,7 +1,6 @@
 package org.example;
 
-import java.util.Arrays;
-import java.util.Objects;
+import java.util.Map;
 
 public class Main {
     static Preprocessor textProcessor = new Preprocessor();
@@ -23,8 +22,8 @@ public class Main {
 //        System.out.println(poem2);
 
         String [] tokens = textProcessor.process(test);
-        for(int i = 0; i< tokens.length; i++){
-            System.out.println(tokens[i]);
-        }
+        Map<String, Integer> termFrequency =Indexer.countUniqueStrings(tokens);
+
     }
+
 }
