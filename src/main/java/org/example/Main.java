@@ -22,9 +22,7 @@ public class Main {
 //        System.out.println(poem1);
 //        System.out.println(poem2);
 
-        test = textProcessor.lowerText(test);
-        test = textProcessor.removePunctuation(test);
-        String [] tokens = textProcessor.getTokens(test);
+        String [] tokens = textProcessor.process(test);
         for(int i = 0; i< tokens.length; i++){
             System.out.println(tokens[i]);
         }

@@ -5,6 +5,11 @@ import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 public class Preprocessor {
     String [] tokens;
+    public String[] process(String text){
+        String loweredText = lowerText(text);
+        loweredText = removePunctuation(loweredText);
+        return getTokens(loweredText);
+    }
     public String[] getTokens(String text){
         tokens= text.split("\\s");
         return tokens;
