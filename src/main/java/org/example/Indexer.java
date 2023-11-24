@@ -5,21 +5,21 @@ import java.util.Map;
 
 public class Indexer {
     public static Map<String,Integer> countUniqueStrings(String[] stringArray) {
-        Map<String, Integer> uniquetokens = new HashMap<>();
+        Map<String, Integer> uniqueTokens = new HashMap<>();
 
         for (String str : stringArray) {
-            if (uniquetokens.containsKey(str)) {
-                uniquetokens.put(str, uniquetokens.get(str) + 1);
+            if (uniqueTokens.containsKey(str)) {
+                uniqueTokens.put(str, uniqueTokens.get(str) + 1);
             } else {
-                uniquetokens.put(str, 1);
+                uniqueTokens.put(str, 1);
             }
         }
 
-        for (Map.Entry<String, Integer> entry : uniquetokens.entrySet()) {
+        for (Map.Entry<String, Integer> entry : uniqueTokens.entrySet()) {
             String uniqueString = entry.getKey();
             int count = entry.getValue();
             System.out.printf("%s: %d occurrences\n", uniqueString, count);
         }
-        return uniquetokens;
+        return uniqueTokens;
     }
 }
