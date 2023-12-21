@@ -33,6 +33,7 @@ public class DocumentVectorization {
 
     public double[] getDocumentVector(List<String> document, Map<String, Integer> bagOfWords) {
         double[] documentVector = new double[bagOfWords.size()];
+        int totalDocuments = this.tokenizedData.size();
 
         for (int i = 0; i < documentVector.length; i++) {
             String word = new ArrayList<>(bagOfWords.keySet()).get(i);
@@ -42,19 +43,20 @@ public class DocumentVectorization {
             long termFrequency = document.stream().filter(token -> token.equals(word)).count();
             double tf = (double) termFrequency / document.size();
 
-            // Calculate Inverse Document Frequency (IDF)
+            // Calculate Inverse Document Frequency (IDF) with smoothing
             int documentFrequency = 0;
             for (List<String> doc : this.tokenizedData) {
                 if (doc.contains(word)) {
                     documentFrequency++;
                 }
             }
-            double idf = Math.log10((double) 2 / documentFrequency);
-            documentVector[i] = tf;
+            double idf = Math.log((double) (totalDocuments + 1) / (documentFrequency + 1)) + 1;
+            documentVector[i] = tf * idf;
         }
 
         return documentVector;
     }
+
 
     public String findMostFrequentWord(List<List<String>> tokenizedData, Map<String, Integer> bagOfWords) {
         Map.Entry<String, Integer> mostFrequentEntry = null;
