@@ -9,23 +9,21 @@ public class Main {
 
         String poem1 = WebScraper.getPoemText("https://www.cs.rpi.edu/~sibel/poetry/poems/nazim_hikmet/ellerinize_ve_yalana_dair");
         String poem2 = WebScraper.getPoemText("https://www.cs.rpi.edu/~sibel/poetry/poems/nazim_hikmet/cankiri_hapishanesinden_mektuplar");
-        if(Objects.equals(poem1, "") || Objects.equals(poem2, "")){
-            System.out.println("Error reading poem from URL");
-            System.exit(400);
-        }
+
         List<List<String>> tokenizedData = new ArrayList<>();
         List<String> poem1Tokens = textProcessor.process(poem1);
-        List<String> poem2Tokens = textProcessor.process(poem2);
         tokenizedData.add(poem1Tokens);
+
+        List<String> poem2Tokens = textProcessor.process(poem2); tokenizedData.add(poem1Tokens);
         tokenizedData.add(poem2Tokens);
 
         Map<String, Integer> bagOfWords = documentVectorization.createBagOfWords(tokenizedData);
+        double[] vector1 = documentVectorization.getDocumentVector(poem1Tokens, bagOfWords);
+        double[] vector2 = documentVectorization.getDocumentVector(poem2Tokens, bagOfWords);
 
-        // Get document vectors
-        for (List<String> document : tokenizedData) {
-            double[] documentVector = documentVectorization.getDocumentVector(document, bagOfWords);
-            System.out.println("Document Vector: " + Arrays.toString(documentVector));
-        }
+        double similarity = CosineSimilarity.computeCosineSimilarity(vector1, vector2);
+        System.out.println("Cosine Similarity: " + similarity);
+
 
     }
 
