@@ -3,13 +3,12 @@
 This project is created for educational purposes as part of my Information Retrieval course. The primary goal is to implement an indexing engine in Java and utilize it to process a Turkish poems by NAZIM HIKMET.
 
 ## Objective
-The objective of this project is to learn and implement the fundamental concepts of information retrieval, including text preprocessing, indexing, and potentially search functionalities. The project aims to create an indexing engine capable of handling a Turkish text dataset, with the intention to grow and incorporate additional features as the course progresses.
+The objective of this project is to learn and implement the fundamental concepts of information retrieval, including text preprocessing, indexing, and potentially search functionalities. 
 
 ## Features
 - Web scraping to retrieve a Turkish poem from a specific URL.
-- (Planned) Text preprocessing techniques such as tokenization, lowercasing.
-- (Planned) Implementation of a basic indexing engine.
-- (Planned) Calculation of cosine similarity of different poems
+- Text preprocessing techniques such as tokenization, lowercasing.
+- Calculation of cosine similarity of different poems
 - (Planned) Search functionalities to retrieve information based on user queries.
 
 ## Technologies Used
