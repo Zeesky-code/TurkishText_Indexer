@@ -1,17 +1,21 @@
 package org.example;
 
+import zemberek.tokenization.TurkishTokenizer;
+
 import java.util.*;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
+
 public class Preprocessor {
-    String [] tokens;
-    public String[] process(String text){
+    static TurkishTokenizer tokenizer = TurkishTokenizer.DEFAULT;
+    List<String> tokens;
+    public List<String> process(String text){
         String loweredText = lowerText(text);
         loweredText = removePunctuation(loweredText);
         return getTokens(loweredText);
     }
-    public String[] getTokens(String text){
-        tokens= text.split("\\s");
+    public List<String> getTokens(String text){
+        tokens = tokenizer.tokenizeToStrings(text);
         return tokens;
     }
     public String lowerText(String text){

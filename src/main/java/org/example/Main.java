@@ -1,5 +1,6 @@
 package org.example;
 
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
@@ -14,14 +15,17 @@ public class Main {
             System.exit(400);
         }
 
-        String[] poem1Tokens = textProcessor.process(poem1);
-        String[] poem2Tokens = textProcessor.process(poem2);
+        List<String> poem1Tokens = textProcessor.process(poem1);
+        List<String> poem2Tokens = textProcessor.process(poem2);
 
-        System.out.println("Tokens in poem 1");
-        Map<String, Integer> termFrequency1 = Indexer.countUniqueStrings(poem1Tokens);
-
-        System.out.println("Tokens in poem 2");
-        Map<String, Integer> termFrequency2 = Indexer.countUniqueStrings(poem2Tokens);
+        for (String token: poem1Tokens) {
+            System.out.println(token);
+        }
+//        System.out.println("Tokens in poem 1");
+//        Map<String, Integer> termFrequency1 = Indexer.countUniqueStrings(poem1Tokens);
+//
+//        System.out.println("Tokens in poem 2");
+//        Map<String, Integer> termFrequency2 = Indexer.countUniqueStrings(poem2Tokens);
 
     }
 
