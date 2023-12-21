@@ -3,11 +3,14 @@ package org.example;
 import java.util.*;
 
 public class DocumentVectorization {
-    public List<List<String>> tokenizedData;
-    public Map<String,Integer> createBagOfWords(List<List<String>> tokenizedData) {
-        Map<String, Integer> bagOfWords = new TreeMap<>();
+    private List<List<String>> tokenizedData;
+
+    public Map<String, Integer> createBagOfWords(List<List<String>> tokenizedData) {
+        Map<String, Integer> bagOfWords = new TreeMap<>(); // TreeMap for alphabetical sorting
+
         this.tokenizedData = tokenizedData;
-        //Create our vocabulary with all unique tokens
+
+        // Create our vocabulary with all unique tokens
         Set<String> vocabulary = new HashSet<>();
         for (List<String> document : tokenizedData) {
             vocabulary.addAll(document);
@@ -27,6 +30,7 @@ public class DocumentVectorization {
 
         return bagOfWords;
     }
+
     public double[] getDocumentVector(List<String> document, Map<String, Integer> bagOfWords) {
         double[] documentVector = new double[bagOfWords.size()];
 
@@ -45,11 +49,22 @@ public class DocumentVectorization {
                     documentFrequency++;
                 }
             }
-            double idf = (double) 2 / documentFrequency;
-
+            double idf = Math.log10((double) 2 / documentFrequency);
             documentVector[i] = tf * idf;
         }
 
         return documentVector;
+    }
+
+    public String findMostFrequentWord(List<List<String>> tokenizedData, Map<String, Integer> bagOfWords) {
+        Map.Entry<String, Integer> mostFrequentEntry = null;
+
+        for (Map.Entry<String, Integer> entry : bagOfWords.entrySet()) {
+            if (mostFrequentEntry == null || entry.getValue() > mostFrequentEntry.getValue()) {
+                mostFrequentEntry = entry;
+            }
+        }
+
+        return mostFrequentEntry != null ? mostFrequentEntry.getKey() : null;
     }
 }
