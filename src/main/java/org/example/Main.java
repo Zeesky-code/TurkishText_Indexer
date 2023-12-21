@@ -19,6 +19,8 @@ public class Main {
         tokenizedData.add(poem1Tokens);
         tokenizedData.add(poem2Tokens);
 
+        Map<String, Integer> bagOfWords = documentVectorization.createBagOfWords(tokenizedData);
+
         // Get document vectors
         for (List<String> document : tokenizedData) {
             double[] documentVector = documentVectorization.getDocumentVector(document, bagOfWords);
