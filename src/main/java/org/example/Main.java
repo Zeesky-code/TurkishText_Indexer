@@ -7,8 +7,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        String poem1 = WebScraper.getPoemText("https://www.cs.rpi.edu/~sibel/poetry/poems/nazim_hikmet/ellerinize_ve_yalana_dair");
-        String poem2 = WebScraper.getPoemText("https://www.cs.rpi.edu/~sibel/poetry/poems/nazim_hikmet/cankiri_hapishanesinden_mektuplar");
+        String poem1 = WebScraper.getPoemText("https://www.cs.rpi.edu/~sibel/poetry/poems/nazim_hikmet/cankiri_hapishanesinden_mektuplar");
+        String poem2 = WebScraper.getPoemText("https://www.cs.rpi.edu/~sibel/poetry/poems/nazim_hikmet/hos_geldin");
 
         List<String> poem1Tokens = textProcessor.process(poem1);
         List<String> poem2Tokens = textProcessor.process(poem2);

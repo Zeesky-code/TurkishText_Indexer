@@ -50,7 +50,7 @@ public class DocumentVectorization {
                 }
             }
             double idf = Math.log10((double) 2 / documentFrequency);
-            documentVector[i] = tf * idf;
+            documentVector[i] = tf;
         }
 
         return documentVector;
