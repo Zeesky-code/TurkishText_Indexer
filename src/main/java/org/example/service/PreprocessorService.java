@@ -7,9 +7,9 @@ import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
 public class PreprocessorService {
-    static TurkishTokenizer tokenizer = TurkishTokenizer.DEFAULT;
+    TurkishTokenizer tokenizer = TurkishTokenizer.DEFAULT;
     List<String> tokens;
-    public List<String> process(String text){
+    public static List<String> process(String text){
         String loweredText = lowerText(text);
         loweredText = removePunctuation(loweredText);
         return getTokens(loweredText);

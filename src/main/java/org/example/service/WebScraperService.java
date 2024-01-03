@@ -4,7 +4,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
 public class WebScraperService {
-    public static String getPoemText(String url){
+    public String getPoemText(String url){
         String poem = "";
         try {
             // Connect to the webpage

@@ -5,7 +5,7 @@ import java.util.*;
 public class DocumentVectorizationService {
     private List<List<String>> tokenizedData;
 
-    public Map<String, Integer> createBagOfWords(List<List<String>> tokenizedData) {
+    public static Map<String, Integer> createBagOfWords(List<List<String>> tokenizedData) {
         Map<String, Integer> bagOfWords = new TreeMap<>(); // TreeMap for alphabetical sorting
 
         this.tokenizedData = tokenizedData;
@@ -31,7 +31,7 @@ public class DocumentVectorizationService {
         return bagOfWords;
     }
 
-    public double[] getDocumentVector(List<String> document, Map<String, Integer> bagOfWords) {
+    public static double[] getDocumentVector(List<String> document, Map<String, Integer> bagOfWords) {
         double[] documentVector = new double[bagOfWords.size()];
         int totalDocuments = this.tokenizedData.size();
 
@@ -58,7 +58,7 @@ public class DocumentVectorizationService {
     }
 
 
-    public String findMostFrequentWord(List<List<String>> tokenizedData, Map<String, Integer> bagOfWords) {
+    public static String findMostFrequentWord(List<List<String>> tokenizedData, Map<String, Integer> bagOfWords) {
         Map.Entry<String, Integer> mostFrequentEntry = null;
 
         for (Map.Entry<String, Integer> entry : bagOfWords.entrySet()) {
