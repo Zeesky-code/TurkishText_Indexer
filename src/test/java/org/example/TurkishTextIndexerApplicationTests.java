@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class TurkishTextIndexerApplicationTests {
+class TurkishText_IndexerApplicationTests {
 
 	@Test
 	void contextLoads() {
