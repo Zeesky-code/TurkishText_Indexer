@@ -3,12 +3,12 @@ package org.example.service;
 import java.util.*;
 
 public class DocumentVectorizationService {
-    private List<List<String>> tokenizedData;
+    private static  List<List<String>> tokenizedData;
 
     public static Map<String, Integer> createBagOfWords(List<List<String>> tokenizedData) {
         Map<String, Integer> bagOfWords = new TreeMap<>(); // TreeMap for alphabetical sorting
 
-        this.tokenizedData = tokenizedData;
+        DocumentVectorizationService.tokenizedData = tokenizedData;
 
         // Create our vocabulary with all unique tokens
         Set<String> vocabulary = new HashSet<>();
@@ -33,7 +33,7 @@ public class DocumentVectorizationService {
 
     public static double[] getDocumentVector(List<String> document, Map<String, Integer> bagOfWords) {
         double[] documentVector = new double[bagOfWords.size()];
-        int totalDocuments = this.tokenizedData.size();
+        int totalDocuments = tokenizedData.size();
 
         for (int i = 0; i < documentVector.length; i++) {
             String word = new ArrayList<>(bagOfWords.keySet()).get(i);
@@ -45,7 +45,7 @@ public class DocumentVectorizationService {
 
             // Calculate Inverse Document Frequency (IDF) with smoothing
             int documentFrequency = 0;
-            for (List<String> doc : this.tokenizedData) {
+            for (List<String> doc : tokenizedData) {
                 if (doc.contains(word)) {
                     documentFrequency++;
                 }
