@@ -1,6 +1,6 @@
-package org.example;
+package org.example.service;
 
-public class CosineSimilarity {
+public class CosineSimilarityService {
     public static double computeCosineSimilarity(double[] vector1, double[] vector2) {
         // Ensure the vectors are of the same length
         if (vector1.length != vector2.length) {
