@@ -1,8 +1,8 @@
-package org.example;
+package org.example.service;
 
 import java.util.*;
 
-public class DocumentVectorization {
+public class DocumentVectorizationService {
     private List<List<String>> tokenizedData;
 
     public Map<String, Integer> createBagOfWords(List<List<String>> tokenizedData) {

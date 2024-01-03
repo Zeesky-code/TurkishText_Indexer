@@ -1,9 +1,9 @@
-package org.example;
+package org.example.service;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
-public class WebScraper {
+public class WebScraperService {
     public static String getPoemText(String url){
         String poem = "";
         try {

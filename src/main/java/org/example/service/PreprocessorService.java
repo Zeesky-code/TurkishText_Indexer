@@ -1,4 +1,4 @@
-package org.example;
+package org.example.service;
 
 import zemberek.tokenization.TurkishTokenizer;
 
@@ -6,7 +6,7 @@ import java.util.*;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
-public class Preprocessor {
+public class PreprocessorService {
     static TurkishTokenizer tokenizer = TurkishTokenizer.DEFAULT;
     List<String> tokens;
     public List<String> process(String text){
