@@ -45,7 +45,7 @@ public class PoemController {
         double[] vector1 = DocumentVectorizationService.getDocumentVector(poem1Tokens, bagOfWords);
         double[] vector2 = DocumentVectorizationService.getDocumentVector(poem2Tokens, bagOfWords);
 
-        double similarity = CosineSimilarityService.computeCosineSimilarity(vector1, vector2);
+        double similarity = CosineSimilarityService.computeCosineSimilarity(vector1, vector2) *100; //return percentage
         String mostFrequentWord = DocumentVectorizationService.findMostFrequentWord(tokenizedData, bagOfWords);
 
         // Pass the result to the view
