@@ -7,7 +7,7 @@ import org.example.service.WebScraperService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
@@ -28,7 +28,7 @@ public class PoemController {
     @Autowired
     private DocumentVectorizationService documentVectorizationService;
 
-    @GetMapping("/compare-poems")
+    @PostMapping("/compare-poems")
     public String comparePoems(@RequestParam String url1, @RequestParam String url2, Model model) {
         // Scrape poems
         String poem1 = webScraperService.getPoemText(url1);
