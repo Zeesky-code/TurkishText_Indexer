@@ -1,7 +1,10 @@
 package org.example.service;
 
+import org.springframework.stereotype.Service;
+
 import java.util.*;
 
+@Service
 public class DocumentVectorizationService {
     private static  List<List<String>> tokenizedData;
 

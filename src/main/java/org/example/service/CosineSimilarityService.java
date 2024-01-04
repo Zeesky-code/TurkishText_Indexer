@@ -1,5 +1,8 @@
 package org.example.service;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class CosineSimilarityService {
     public static double computeCosineSimilarity(double[] vector1, double[] vector2) {
         // Ensure the vectors are of the same length
