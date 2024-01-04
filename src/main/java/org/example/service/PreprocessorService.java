@@ -1,11 +1,13 @@
 package org.example.service;
 
+import org.springframework.stereotype.Service;
 import zemberek.tokenization.TurkishTokenizer;
 
 import java.util.*;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
+@Service
 public class PreprocessorService {
     static TurkishTokenizer tokenizer = TurkishTokenizer.DEFAULT;
     static List<String> tokens;

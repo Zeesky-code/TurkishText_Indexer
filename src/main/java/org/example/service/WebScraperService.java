@@ -2,7 +2,9 @@ package org.example.service;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.springframework.stereotype.Service;
 
+@Service
 public class WebScraperService {
     public String getPoemText(String url){
         String poem = "";
